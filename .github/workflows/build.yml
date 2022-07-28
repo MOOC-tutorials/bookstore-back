@@ -1,1 +1,22 @@
-#TODO
+name: Build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Maven
+        uses: s4u/setup-maven-action@v1.2.1
+        with:
+          java-version: 8
+      - name: Build with Maven
+        run: |
+          mvn verify
