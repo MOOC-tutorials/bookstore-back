@@ -76,9 +76,9 @@ public class PrizeAuthorController {
 
 	private String prizeId = null;
 
-	@GetMapping(value = "/{prizeId}/greet")
+	@RequestMapping("/prizes/test", method = GET)
 	@ResponseStatus(code = HttpStatus.OK)
-	public String getAuthorTest(@PathVariable("prizeId") String prizeId){
+	public String getAuthorTest(String prizeId){
 		   if (prizeId != null) {
     		  this.prizeId = prizeId;
   		    }
