@@ -33,9 +33,10 @@ import java.util.Random;
 import uk.co.jemos.podam.common.AttributeStrategy;
 
 public class DateStrategy implements AttributeStrategy<Date> {
-	Random r = new Random();
+	
 
 	public Date getValue() {
+		Random r = new Random();
 		Calendar c = Calendar.getInstance();
 		int maxYear = 9999;
 		c.set(Calendar.YEAR,
