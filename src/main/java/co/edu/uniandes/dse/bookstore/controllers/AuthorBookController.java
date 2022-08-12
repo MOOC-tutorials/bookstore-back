@@ -45,6 +45,8 @@ import co.edu.uniandes.dse.bookstore.entities.BookEntity;
 import co.edu.uniandes.dse.bookstore.exceptions.EntityNotFoundException;
 import co.edu.uniandes.dse.bookstore.exceptions.IllegalOperationException;
 import co.edu.uniandes.dse.bookstore.services.AuthorBookService;
+import java.util.logging.Logger;
+
 
 /**
  * Clase que implementa el recurso "authors/{id}/books".
@@ -61,6 +63,9 @@ public class AuthorBookController {
 	@Autowired
 	private ModelMapper modelMapper;
 
+	Logger logger = Logger.getLogger("MyLog");
+
+
 	/**
 	 * Busca y devuelve el libro con el ID recibido en la URL, relativo a un autor.
 	 *
@@ -72,6 +77,7 @@ public class AuthorBookController {
 	@ResponseStatus(code = HttpStatus.OK)
 	public BookDetailDTO getBook(@PathVariable("authorId") Long authorId, @PathVariable("bookId") Long bookId)
 			throws EntityNotFoundException, IllegalOperationException {
+		logger.info("Param1"+authorId);
 		BookEntity bookEntity = authorBookService.getBook(authorId, bookId);
 		return modelMapper.map(bookEntity, BookDetailDTO.class);
 	}
