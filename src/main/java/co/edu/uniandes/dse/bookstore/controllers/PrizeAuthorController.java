@@ -76,7 +76,7 @@ public class PrizeAuthorController {
 
 	private String prizeId = null;
 
-	@RequestMapping("/prizes/test", method = GET)
+	@RequestMapping(value="/prizes/test", method = GET)
 	@ResponseStatus(code = HttpStatus.OK)
 	public String getAuthorTest(String prizeId){
 		   if (prizeId != null) {
