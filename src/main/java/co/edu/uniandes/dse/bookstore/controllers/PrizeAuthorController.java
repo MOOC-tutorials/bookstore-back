@@ -80,7 +80,7 @@ public class PrizeAuthorController {
 	@ResponseStatus(code = HttpStatus.OK)
 	public String getAuthorTest(@PathVariable("prizeId") String prizeId) throws EntityNotFoundException {
 		   if (prizeId != null) {
-    		  this.prizeId = greetee;
+    		  this.prizeId = prizeId;
   		    }
 
     	return "Hello " + this.prizeId;  // if greetee is null, you see the previous user's data
