@@ -73,6 +73,18 @@ public class PrizeAuthorController {
 		return modelMapper.map(authorEntity, AuthorDTO.class);
 	}
 
+
+	private long prizeId = null;
+
+	@GetMapping(value = "/{prizeId}/greet")
+	@ResponseStatus(code = HttpStatus.OK)
+	public AuthorDetailDTO getAuthor(@PathVariable("prizeId") Long prizeId) throws EntityNotFoundException {
+		   if (prizeId != null) {
+    		  this.prizeId = greetee;
+  		    }
+
+    	return "Hello " + this.prizeId;  // if greetee is null, you see the previous user's data
+	}
 	/**
 	 * Busca el autor dentro de el premio con id asociado.
 	 *
