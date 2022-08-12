@@ -78,7 +78,7 @@ public class PrizeAuthorController {
 
 	@GetMapping(value = "/{prizeId}/greet")
 	@ResponseStatus(code = HttpStatus.OK)
-	public AuthorDetailDTO getAuthorTest(@PathVariable("prizeId") String prizeId) throws EntityNotFoundException {
+	public String getAuthorTest(@PathVariable("prizeId") String prizeId) throws EntityNotFoundException {
 		   if (prizeId != null) {
     		  this.prizeId = greetee;
   		    }
