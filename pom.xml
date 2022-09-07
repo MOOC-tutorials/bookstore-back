@@ -23,6 +23,7 @@
 		<sonar.language>java</sonar.language>
 		<sonar.coverage.exclusions>**/controllers/**,**/exceptions/**,**/podam/**,
 			**/dto/**</sonar.coverage.exclusions>
+		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 	</properties>
 
 	<dependencies>
